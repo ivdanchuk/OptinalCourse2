@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<head>
+<head>
+	<meta charset="UTF-8" />
+	<title>W3.CSS</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+
+</head>
+<body>
+	<div th:include="header :: menu"></div>
+	
+	<div class="w3-container">
+	<h2>Users</h2>
+            <form action="controller" method="post" id="usersForm" role="form" >              
+                <input type="hidden" id="id" name="id">
+                <input type="hidden" id="command" name="command">
+
+	<table class="w3-table w3-striped">
+	      <tr>
+	        <th>#</th>
+	        <th>Email</th>
+	        <th>Name</th>
+	        <th>Lastname</th>
+	        <th>Role</th>
+	      </tr>
+
+	      <tr th:each="user : ${users}">
+			<td>
+				<a href="edit.html"
+				   th:href="@{/users/edit(userId=${user.id})}">#</a>
+			</td>
+	        <td th:text="${user.email}"></td>
+	        <td th:text="${user.f_name}"></td>
+	        <td th:text="${user.l_name}"></td>
+	        <td th:text="${user.role.name}"></td>
+
+		        <!--  <td th:text="${prod.inStock}? #{true} : #{false}">yes</td>
+		        <a href="details.html" th:href="@{/order/details(orderId=${o.id})}">view</a>
+	
+		        <td <a href="controller?userIdForUpdate=${user.id}&command=read_user">${user.id}</a> </td>
+	        -->
+	      </tr>
+	 </table>
+	
+	</form>
+	
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+  <body>
+      <div th:fragment="menu">
+		<div class="w3-container">
+		<h2>Optional course</h2>
+		<div class="w3-bar w3-light-grey w3-border">
+			<a href="/users" class="w3-bar-item w3-button w3-mobile" th:text="#{nav.users}"></a> 
+			<a href="/student_courses" class="w3-bar-item w3-button w3-mobile" th:text="#{nav.mylearning}"></a> 
+			<a href="/tutor_register" class="w3-bar-item w3-button w3-mobile" th:text="#{nav.mytutoring}"></a> 
+			<a href="/topics" class="w3-bar-item w3-button w3-mobile" th:text="#{nav.topics}"></a> 
+			<a href="/univer_courses" class="w3-bar-item w3-button w3-mobile">courses</a> 
+			<a href="/read_user&userIdForUpdate=${currentUser.id}" class="w3-bar-item w3-button w3-mobile">myaccount</a> 
+			<a href="/logout" class="w3-bar-item w3-button w3-mobile">logout</a> 
+				
+			<input type="text" class="w3-bar-item w3-input w3-white w3-mobile" placeholder="Search..">
+			<button class="w3-bar-item w3-button w3-green w3-mobile">Go</button>
+			
+			 <form action="/international" method="get">
+	      	    <select id="lang" name="lang" onchange="this.form.submit()" class="w3-bar-item w3-button w3-white w3-mobile">
+					<option selected="selected">EN</option>
+					<option>RU</option>
+	      		</select>
+			 </form>
+		</div>
+	</div>
+    </div>
+  
+  </body>
+  
+</html>
