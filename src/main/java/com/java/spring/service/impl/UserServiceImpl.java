@@ -19,11 +19,11 @@ public class UserServiceImpl implements IUserService {
 
 	@Override
 	@Transactional
-	public boolean createUser(UserDTO user) {
+	public boolean createUser(User user) {
 		if (userRepository.existsByLogin(user.getEmail()))
 			return false;
 
-		userRepository.save(User.fromDTO(user));
+		userRepository.save(user);
 		return true;
 	}
 

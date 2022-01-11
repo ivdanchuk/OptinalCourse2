@@ -29,8 +29,7 @@
 
 	      <tr th:each="user : ${users}">
 			<td>
-				<a href="edit.html"
-				   th:href="@{/users/edit(userId=${user.id})}">#</a>
+				<a th:href="@{/users/{id}(id=${user.id})}" th:text="${user.id}">user</a>
 			</td>
 	        <td th:text="${user.email}"></td>
 	        <td th:text="${user.f_name}"></td>

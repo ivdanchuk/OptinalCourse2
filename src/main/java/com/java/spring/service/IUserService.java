@@ -10,7 +10,7 @@ import com.java.spring.entity.User;
 
 public interface IUserService {
 	@Transactional
-	boolean createUser(UserDTO user);
+	boolean createUser(User user);
 
 	boolean updateUser(User user);
 

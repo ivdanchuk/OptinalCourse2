@@ -12,10 +12,7 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import com.java.spring.constant.PAGES;
 import com.java.spring.dto.UserDTO;
@@ -35,32 +32,41 @@ public class UserController {
 	final static Logger logger = LogManager.getLogger();
 
 	@GetMapping
-	public String getMainPage(HttpSession session, Model model) {
+	public String getMainPage(Model model) {
 		List<User> users = new ArrayList<>();
 		users = userService.findAll();
-//		session.setAttribute("users", users);
 		model.addAttribute("users", users);
 		return PAGES.USERS_PAGE;
 	}
 
-	@GetMapping(value = "/edit")
-	public String getUserEditPage(@RequestParam(name = "userId") String userId, HttpSession session, Model model) {
-		logger.trace("getUserEditPage# userId=" + userId);
-		User user = userService.findUserById(Long.parseLong(userId)).get();
+	@GetMapping(value = "/{id}")
+	public String getUserEditPage(@PathVariable(name = "id") long id, Model model) {
+		User user = userService.findUserById(id).get();
 		model.addAttribute("user", user);
-		return "userForm";
+		return "users/userForm";
 	}
 
 	@PostMapping(value = "/update")
-	public String addUser(HttpServletRequest request, @Valid UserDTO userDTO) {
-//		Long userId = Long.parseLong(request.getParameter("userId"));
+	public String updateUser(HttpServletRequest request, @Valid UserDTO userDTO) {
 		String roleName = request.getParameter("role_id");
 		Role role = roleService.findRoleByName(roleName).get();
 		userDTO.setRole(role);
 		User user = User.fromDTO(userDTO);
 		userService.updateUser(user);
-		logger.info("update user with id = " + userDTO.getId());
+		return "redirect:/users";
+	}
+	@GetMapping ("/new")
+	public String showNewUserForm (){
+		return "users/new";
+	}
 
-		return PAGES.USERS_PAGE;
+	@PostMapping ()
+	public String createNewUser (@RequestParam("role_id") long role_id, @Valid UserDTO userDTO){
+		Role role = roleService.findRoleById(role_id).get();
+		userDTO.setRole(role);
+		userDTO.setId(-1l);
+		User user = User.fromDTO(userDTO);
+		userService.createUser(user);
+		return "redirect:/users";
 	}
 }

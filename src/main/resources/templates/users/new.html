@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<head>
+	<meta charset="UTF-8" />
+	<title>W3.CSS</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+	<div th:include="header :: menu"></div>
+
+        <div class="container">
+            <form action="/users" method="post" id="newUser" role="form" data-toggle="validator" >
+                <input type="hidden" name="id" id="id" class="form-control"/>
+				<br>
+				<h3>New user </h3>
+                <div class="form-group col-lg-4">
+                    <label for="email" class="control-label col-lg-4">Email:</label>                   
+                    <input type="text" name="email" id="email" class="form-control" placeholder="smith@aol.com" required="true"/ maxlength="64" minlength="10">
+
+                    <label for="f_name" class="control-label col-lg-4">Name:</label>
+                    <input type="text" name="f_name" id="f_name" class="form-control" pattern="[a-zA-Za-zА-я]{4,}" required="true"/>
+
+                    <label for="l_name" class="control-label col-lg-4">Last name:</label>
+                    <input type="text" name="l_name" id="l_name" class="form-control" pattern="[a-zA-Za-zА-я]{4,}" required="true"/>
+
+                    <label for="password" class="control-label col-lg-4">Password:</label>                   
+                    <input type="password" name="password" id="password" class="form-control" pattern="[a-zA-Z0-9]{3,16}" required="true"/>
+
+                    <label for="role_id" class="control-label col-lg-4">Role:</label>
+                    <input type="text" name="role_id" id="role_id" class="form-control" required="true"/>
+                    <br>
+	                <button type="submit" class="btn btn-primary  btn-md">New</button>
+                </div>                                                      
+            </form>
+        </div>
+</body>
+</html>
