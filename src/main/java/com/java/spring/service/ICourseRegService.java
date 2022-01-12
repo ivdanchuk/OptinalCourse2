@@ -13,12 +13,6 @@ public interface ICourseRegService {
 	@Transactional
 	boolean updateUsersCourses(CourseReg usersCourses);
 
-//	@Transactional(readOnly = true)
-//	List<UsersCourses> findByCourse(Course course);
-
-//	@Transactional(readOnly = true)
-//	List<UsersCourses> findByUser(User user);
-
 	@Transactional(readOnly = true)
 	List<CourseReg> findAll();
 }
