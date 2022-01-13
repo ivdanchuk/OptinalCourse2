@@ -1,4 +1,4 @@
-package com.java.spring.repository;
+package com.java.spring.repository.user;
 
 import java.util.Optional;
 
@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
-import com.java.spring.entity.User;
+import com.java.spring.entity.user.User;
 
 public interface UserRepository extends JpaRepository<User, Long> {
 	@Query("SELECT CASE WHEN COUNT(u) > 0 THEN true ELSE false " + "END FROM User u WHERE u.email = :email")

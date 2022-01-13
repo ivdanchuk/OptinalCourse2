@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.java.spring.entity.CourseReg;
+import com.java.spring.entity.course.CourseReg;
 import com.java.spring.repository.CourseRegRepository;
 import com.java.spring.service.ICourseRegService;
 

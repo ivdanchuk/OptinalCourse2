@@ -1,12 +1,11 @@
-package com.java.spring.service;
+package com.java.spring.repository.user;
 
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.transaction.annotation.Transactional;
 
-import com.java.spring.dto.UserDTO;
-import com.java.spring.entity.User;
+import com.java.spring.entity.user.User;
 
 public interface IUserService {
 	@Transactional

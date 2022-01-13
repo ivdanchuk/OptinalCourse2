@@ -6,7 +6,7 @@ import java.util.Optional;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.java.spring.dto.CourseDTO;
-import com.java.spring.entity.Course;
+import com.java.spring.entity.course.Course;
 
 public interface ICourseService {
 	@Transactional

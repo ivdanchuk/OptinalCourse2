@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.java.spring.constant.PAGES;
-import com.java.spring.entity.Topic;
+import com.java.spring.entity.topic.Topic;
 import com.java.spring.service.impl.TopicServiceImpl;
 
 @Controller

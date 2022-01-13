@@ -1,4 +1,4 @@
-package com.java.spring.entity;
+package com.java.spring.entity.topic;
 
 import java.io.Serializable;
 import java.util.Objects;

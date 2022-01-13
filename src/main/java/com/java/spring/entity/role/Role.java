@@ -1,4 +1,4 @@
-package com.java.spring.entity;
+package com.java.spring.entity.role;
 
 import java.io.Serializable;
 import java.util.Objects;

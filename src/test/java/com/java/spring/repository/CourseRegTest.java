@@ -11,13 +11,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.java.spring.entity.Course;
-import com.java.spring.entity.CourseReg;
-import com.java.spring.entity.CourseRegKey;
-import com.java.spring.entity.User;
+import com.java.spring.entity.course.Course;
+import com.java.spring.entity.course.CourseReg;
+import com.java.spring.entity.course.CourseRegKey;
+import com.java.spring.entity.user.User;
 import com.java.spring.service.impl.CourseRegServiceImpl;
 import com.java.spring.service.impl.CourseServiceImpl;
-import com.java.spring.service.impl.UserServiceImpl;
+import com.java.spring.repository.user.UserServiceImpl;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest

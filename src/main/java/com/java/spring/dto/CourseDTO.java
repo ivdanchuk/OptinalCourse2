@@ -5,9 +5,9 @@ import java.util.Set;
 
 import javax.validation.constraints.NotBlank;
 
-import com.java.spring.entity.Topic;
-import com.java.spring.entity.User;
-import com.java.spring.entity.CourseReg;
+import com.java.spring.entity.topic.Topic;
+import com.java.spring.entity.user.User;
+import com.java.spring.entity.course.CourseReg;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

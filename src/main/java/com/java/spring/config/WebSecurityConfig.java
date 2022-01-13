@@ -28,14 +28,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                     .and()
                 .httpBasic(); // (7)
     }
-    // Create 2 users for demo
+
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 
         auth.inMemoryAuthentication()
-                .withUser("user").password("{noop}password").roles("USER")
-                .and()
-                .withUser("admin").password("{noop}password").roles("USER", "ADMIN");
+                .withUser("user").password("{noop}password").roles("USER");
+                //.and()
+                //.withUser("admin").password("{noop}password").roles("USER", "ADMIN");
 
     }
 

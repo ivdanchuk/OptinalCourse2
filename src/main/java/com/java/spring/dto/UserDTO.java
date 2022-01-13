@@ -6,8 +6,8 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
-import com.java.spring.entity.Role;
-import com.java.spring.entity.CourseReg;
+import com.java.spring.entity.role.Role;
+import com.java.spring.entity.course.CourseReg;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

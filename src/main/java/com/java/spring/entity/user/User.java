@@ -1,4 +1,4 @@
-package com.java.spring.entity;
+package com.java.spring.entity.user;
 
 import java.io.Serializable;
 import java.util.Objects;
@@ -16,6 +16,8 @@ import javax.persistence.Table;
 
 import com.java.spring.dto.UserDTO;
 
+import com.java.spring.entity.course.CourseReg;
+import com.java.spring.entity.role.Role;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 

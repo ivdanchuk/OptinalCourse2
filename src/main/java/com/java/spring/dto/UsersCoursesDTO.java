@@ -2,9 +2,9 @@ package com.java.spring.dto;
 
 import java.time.LocalDate;
 
-import com.java.spring.entity.Course;
-import com.java.spring.entity.User;
-import com.java.spring.entity.CourseRegKey;
+import com.java.spring.entity.course.Course;
+import com.java.spring.entity.user.User;
+import com.java.spring.entity.course.CourseRegKey;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

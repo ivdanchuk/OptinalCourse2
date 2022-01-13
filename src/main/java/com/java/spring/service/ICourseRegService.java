@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.transaction.annotation.Transactional;
 
-import com.java.spring.entity.CourseReg;
+import com.java.spring.entity.course.CourseReg;
 
 public interface ICourseRegService {
 	@Transactional

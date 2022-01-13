@@ -1,4 +1,4 @@
-package com.java.spring.entity;
+package com.java.spring.entity.course;
 
 import java.io.Serializable;
 

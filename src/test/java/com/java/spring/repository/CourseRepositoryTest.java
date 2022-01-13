@@ -7,6 +7,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import com.java.spring.repository.user.UserRepository;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,10 +15,10 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import com.java.spring.dto.CourseDTO;
-import com.java.spring.entity.Course;
-import com.java.spring.entity.CourseReg;
-import com.java.spring.entity.Topic;
-import com.java.spring.entity.User;
+import com.java.spring.entity.course.Course;
+import com.java.spring.entity.course.CourseReg;
+import com.java.spring.entity.topic.Topic;
+import com.java.spring.entity.user.User;
 import com.java.spring.service.impl.CourseServiceImpl;
 
 @RunWith(SpringRunner.class)
@@ -30,7 +31,7 @@ public class CourseRepositoryTest {
 	TopicRepository topicRepository;
 
 	@Autowired
-	UserRepository userRepository;
+    UserRepository userRepository;
 
 	@Test
 	void findAll() {

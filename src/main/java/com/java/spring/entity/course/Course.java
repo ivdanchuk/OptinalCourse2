@@ -1,4 +1,4 @@
-package com.java.spring.entity;
+package com.java.spring.entity.course;
 
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -17,6 +17,8 @@ import javax.persistence.Table;
 
 import com.java.spring.dto.CourseDTO;
 
+import com.java.spring.entity.topic.Topic;
+import com.java.spring.entity.user.User;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 

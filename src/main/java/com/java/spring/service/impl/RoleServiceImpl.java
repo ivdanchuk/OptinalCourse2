@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.java.spring.entity.Role;
+import com.java.spring.entity.role.Role;
 import com.java.spring.repository.RoleRepository;
 import com.java.spring.service.IRoleService;
 

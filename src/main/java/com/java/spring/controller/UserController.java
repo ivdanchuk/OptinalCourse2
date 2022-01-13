@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.apache.logging.log4j.LogManager;
@@ -16,10 +15,10 @@ import org.springframework.web.bind.annotation.*;
 
 import com.java.spring.constant.PAGES;
 import com.java.spring.dto.UserDTO;
-import com.java.spring.entity.Role;
-import com.java.spring.entity.User;
+import com.java.spring.entity.role.Role;
+import com.java.spring.entity.user.User;
 import com.java.spring.service.impl.RoleServiceImpl;
-import com.java.spring.service.impl.UserServiceImpl;
+import com.java.spring.repository.user.UserServiceImpl;
 
 @Controller
 @RequestMapping(value = "/users")

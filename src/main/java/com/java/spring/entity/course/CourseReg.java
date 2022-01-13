@@ -1,4 +1,4 @@
-package com.java.spring.entity;
+package com.java.spring.entity.course;
 
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -12,6 +12,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.MapsId;
 import javax.persistence.Table;
 
+import com.java.spring.entity.user.User;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
@@ -27,7 +28,7 @@ public class CourseReg implements Serializable {
 	@ManyToOne
 	@MapsId("userId")
 	@JoinColumn(name = "user_id")
-	User user;
+    User user;
 
 	@ManyToOne
 	@MapsId("courseId")

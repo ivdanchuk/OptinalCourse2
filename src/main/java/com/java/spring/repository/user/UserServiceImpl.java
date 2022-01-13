@@ -1,4 +1,4 @@
-package com.java.spring.service.impl;
+package com.java.spring.repository.user;
 
 import java.util.List;
 import java.util.Optional;
@@ -7,10 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.java.spring.dto.UserDTO;
-import com.java.spring.entity.User;
-import com.java.spring.repository.UserRepository;
-import com.java.spring.service.IUserService;
+import com.java.spring.entity.user.User;
+import com.java.spring.repository.user.UserRepository;
+import com.java.spring.repository.user.IUserService;
 
 @Service
 public class UserServiceImpl implements IUserService {
@@ -22,7 +21,6 @@ public class UserServiceImpl implements IUserService {
 	public boolean createUser(User user) {
 		if (userRepository.existsByLogin(user.getEmail()))
 			return false;
-
 		userRepository.save(user);
 		return true;
 	}
