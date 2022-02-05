@@ -15,22 +15,22 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.java.spring.constant.PAGES;
 import com.java.spring.entity.topic.Topic;
-import com.java.spring.service.impl.TopicServiceImpl;
+import com.java.spring.service.topic.TopicServiceImpl;
 
 @Controller
 @RequestMapping(value = "/topics")
 public class TopicController {
-	@Autowired
-	private TopicServiceImpl topicService;
+    @Autowired
+    private TopicServiceImpl topicService;
 
-	final static Logger logger = LogManager.getLogger();
+    final static Logger logger = LogManager.getLogger();
 
-	@GetMapping
-	public String getMainPage(HttpSession session, Model model) {
-		List<Topic> topics = new ArrayList<>();
-		topics = topicService.findAllTopics();
+    @GetMapping
+    public String getMainPage(HttpSession session, Model model) {
+        List<Topic> topics = new ArrayList<>();
+        topics = topicService.findAllTopics();
 //		session.setAttribute("users", users);
-		model.addAttribute("topics", topics);
-		return PAGES.TOPICS_PAGE;
-	}
+        model.addAttribute("topics", topics);
+        return PAGES.TOPICS_PAGE;
+    }
 }

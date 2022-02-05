@@ -1,4 +1,4 @@
-package com.java.spring.service.impl;
+package com.java.spring.service.course;
 
 import java.util.List;
 
@@ -7,24 +7,23 @@ import org.springframework.stereotype.Service;
 
 import com.java.spring.entity.course.CourseReg;
 import com.java.spring.repository.CourseRegRepository;
-import com.java.spring.service.ICourseRegService;
 
 @Service
 public class CourseRegServiceImpl implements ICourseRegService {
-	@Autowired
-	private CourseRegRepository usersCoursesRepository;
+    @Autowired
+    private CourseRegRepository usersCoursesRepository;
 
-	@Override
-	public boolean createUsersCourses(CourseReg usersCourses) {
-		usersCoursesRepository.save(usersCourses);
-		return true;
-	}
+    @Override
+    public boolean createUsersCourses(CourseReg usersCourses) {
+        usersCoursesRepository.save(usersCourses);
+        return true;
+    }
 
-	@Override
-	public boolean updateUsersCourses(CourseReg usersCourses) {
-		usersCoursesRepository.save(usersCourses);
-		return true;
-	}
+    @Override
+    public boolean updateUsersCourses(CourseReg usersCourses) {
+        usersCoursesRepository.save(usersCourses);
+        return true;
+    }
 
 //	@Override
 //	public List<UsersCourses> findByCourse(Course course) {
@@ -38,8 +37,8 @@ public class CourseRegServiceImpl implements ICourseRegService {
 //		return null;
 //	}
 
-	@Override
-	public List<CourseReg> findAll() {
-		return usersCoursesRepository.findAll();
-	}
+    @Override
+    public List<CourseReg> findAll() {
+        return usersCoursesRepository.findAll();
+    }
 }

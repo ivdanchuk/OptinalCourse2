@@ -1,4 +1,4 @@
-package com.java.spring.dto;
+package com.java.spring.dto.user;
 
 import java.util.Set;
 
@@ -18,7 +18,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class UserDTO {
 	private Long id;
-
 	@NotBlank
 	@Email
 	private String email;
@@ -26,6 +25,7 @@ public class UserDTO {
 	@NotBlank
 	@Size(min = 3, max = 20)
 	private String password;
+
 	private String f_name;
 	private String l_name;
 

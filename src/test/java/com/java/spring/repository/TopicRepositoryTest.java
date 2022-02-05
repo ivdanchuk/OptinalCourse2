@@ -1,43 +1,39 @@
 package com.java.spring.repository;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
+import java.util.ArrayList;
 import java.util.List;
 
-import org.junit.jupiter.api.Test;
+import com.java.spring.service.topic.TopicServiceImpl;
+import org.junit.Before;
+import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
 
 import com.java.spring.entity.topic.Topic;
+import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest()
-
 public class TopicRepositoryTest {
-	@Autowired
-	TopicRepository topicRepository;
+    List<Topic> topics;
+    TopicServiceImpl topicService;
 
-	@Test
-	void findAll() throws Exception {
-		List<Topic> topics = topicRepository.findAll();
-		assertThat(topics).hasSize(4);
-		assertThat(topics.get(0).getName()).isEqualTo("Backend");
-		assertThat(topics.get(3).getName()).isEqualTo("Frontend");
-	}
+    @Before
+    public void setup() {
+        List<Topic> topics = new ArrayList<>();
+        topics.add(new Topic(1l, "Topic1"));
+        topics.add(new Topic(2l, "Topic2"));
+        topicService = mock(TopicServiceImpl.class);
+    }
 
-	@Test
-	void findByName() throws Exception {
-		List<Topic> topics = topicRepository.findByName("DeVops");
-		assertThat(topics).hasSize(1);
-		assertThat(topics.get(0).getName()).isEqualTo("DevOps");
-	}
-
-	@Test
-	void addNewTopic() {
-		Topic topic = new Topic(-1l, "TestTopicInserted");
-		topicRepository.save(topic);
-		assertThat(topicRepository.findByName("TestTopicInserted").get(0).getName()).isEqualTo("TestTopicInserted");
-	}
+    @Test
+    public void findAll() {
+        when(topicService.findAllTopics()).thenReturn(topics);
+        assertThat(topicService.findAllTopics()).hasSize(2);
+        assertThat(topicService.findAllTopics().get(0).getName()).isEqualTo("Topic1");
+    }
 }

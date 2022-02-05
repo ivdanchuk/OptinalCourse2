@@ -14,7 +14,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import com.java.spring.dto.UserDTO;
+import com.java.spring.dto.user.UserDTO;
 
 import com.java.spring.entity.course.CourseReg;
 import com.java.spring.entity.role.Role;

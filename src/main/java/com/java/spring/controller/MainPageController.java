@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping(value = "/main")
 public class MainPageController {
 
-//	@GetMapping(value = "/info")
 	@GetMapping
 	public String getInfoPage(HttpSession session, Model model) {
 		return "main";
